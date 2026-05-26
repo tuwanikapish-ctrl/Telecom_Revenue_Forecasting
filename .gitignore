@@ -40,9 +40,6 @@ venv*/
 /web/uploads/
 /data/output/
 /data/processed/
-/data/raw/
-!/data/raw/
-!/data/raw/3service.csv
 
 # OS files
 .DS_Store
