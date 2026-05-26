@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telecom Revenue Forecasting</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Inter',sans-serif;
+        }
+
+        body{
+            background:#0f172a;
+            color:white;
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            overflow:hidden;
+        }
+
+        .container{
+            width:100%;
+            max-width:1100px;
+            display:flex;
+            background:white;
+            border-radius:24px;
+            overflow:hidden;
+            box-shadow:0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        /* LEFT PANEL */
+
+        .left{
+            flex:1;
+            background:linear-gradient(135deg,#2563eb,#7c3aed);
+            padding:60px;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+        }
+
+        .left h1{
+            font-size:48px;
+            line-height:1.2;
+            margin-bottom:20px;
+            font-weight:700;
+        }
+
+        .left p{
+            font-size:18px;
+            color:#dbeafe;
+            line-height:1.7;
+        }
+
+        .features{
+            margin-top:40px;
+        }
+
+        .features div{
+            margin-bottom:18px;
+            font-size:16px;
+        }
+
+        /* RIGHT PANEL */
+
+        .right{
+            flex:1;
+            padding:60px;
+            color:#0f172a;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+        }
+
+        .upload-card{
+            width:100%;
+        }
+
+        .upload-card h2{
+            font-size:32px;
+            margin-bottom:15px;
+        }
+
+        .upload-card p{
+            color:#64748b;
+            margin-bottom:30px;
+            line-height:1.6;
+        }
+
+        .file-input{
+            width:100%;
+            padding:14px;
+            border:2px dashed #cbd5e1;
+            border-radius:14px;
+            margin-bottom:25px;
+            cursor:pointer;
+        }
+
+        .upload-btn{
+            width:100%;
+            padding:16px;
+            border:none;
+            border-radius:14px;
+            background:#2563eb;
+            color:white;
+            font-size:16px;
+            font-weight:600;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .upload-btn:hover{
+            background:#1d4ed8;
+        }
+
+        .note{
+            margin-top:20px;
+            font-size:14px;
+            color:#64748b;
+            text-align:center;
+        }
+
+        .error-box{
+        background:#fee2e2;
+        color:#b91c1c;
+        border-left:5px solid #ef4444;
+        padding:14px;
+        border-radius:12px;
+        margin-bottom:20px;
+        font-size:15px;
+        line-height:1.5;
+        }
+
+        @media(max-width:900px){
+
+            .container{
+                flex-direction:column;
+                margin:20px;
+            }
+
+            .left,
+            .right{
+                padding:40px;
+            }
+
+            .left h1{
+                font-size:36px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- LEFT -->
+        <div class="left">
+
+            <h1>
+                Telecom Revenue Forecasting Platform
+            </h1>
+
+            <p>
+                AI-powered analytics dashboard for forecasting telecom revenue trends,
+                financial growth, and service performance.
+            </p>
+
+            <div class="features">
+
+                <div>📈 Revenue Forecasting</div>
+                <div>📊 KPI Analytics Dashboard</div>
+                <div>📡 Telecom Service Insights</div>
+                <div>🤖 Machine Learning Predictions</div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="right">
+
+            <div class="upload-card">
+
+                <h2>Upload Dataset</h2>
+
+                <p>
+                Upload your telecom financial dataset in CSV format
+                to generate AI-based revenue forecasts and analytics.
+                </p>
+
+                {% if error %}
+                <div class="error-box">
+                <strong>❌ Upload Failed</strong><br>
+                {{ error }}
+</div>
+                {% endif %}
+
+<form action="/upload" method="POST" enctype="multipart/form-data">
+
+                    <input 
+                        type="file" 
+                        name="file"
+                        class="file-input"
+                        required
+                    >
+
+                    <button type="submit" class="upload-btn">
+                        Upload & Generate Dashboard
+                    </button>
+
+                </form>
+
+                <div class="note">
+                    Supported format: CSV, XLSX
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

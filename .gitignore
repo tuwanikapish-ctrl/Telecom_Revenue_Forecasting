@@ -1,0 +1,66 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
+env/
+venv/
+.venv/
+venv*/
+
+# Python cache and artifacts
+*.pyc
+.pytest_cache/
+
+# VSCode
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints
+
+# Environment variables
+.env
+.env.*
+
+# Logs
+*.log
+
+# Data and uploads (do not commit large/raw data files)
+/data/
+/uploads/
+/web/uploads/
+/data/output/
+/data/processed/
+/data/raw/
+!/data/raw/
+!/data/raw/3service.csv
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Databases and backups
+*.sqlite3
+*.db
+*.bak
+
+# IDEs
+.idea/
+
+# Machine Learning models
+models/
+*.pkl
+*.joblib
+*.h5
+*.keras
+*.pt
+*.pth
